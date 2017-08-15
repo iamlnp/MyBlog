@@ -1,33 +1,36 @@
 import React from 'react';
+import '.././css/common/buttons.css';
 import '.././css/TitleIndex.css';
 import $ from 'jquery';
 import 'smartmenus';
+import {Router,Link} from 'react-router'
 
 
 
 
 export default class NavIndex extends React.Component{
-    componentDidMount(){
-        return (
-            $(function() {
-            $('#main-menu').smartmenus();
-            })
-        );
-    }
     render(){
         return(
-            <div>
-                <ul id="main-menu" class="sm sm-blue">
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a>
-                    <ul>
-                    <li><a href="#">Item 2-1</a></li>
-                    <li><a href="#">Item 2-2</a></li>
-                    <li><a href="#">Item 2-3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Item 3</a></li>
-                </ul>
+            <div id="divIndex">
+                <img classname="inline" src={require('.././assets/images/myblog-normal.png')} 
+                    width='150vh'/>
+                <button id="buttonIndex" type="button" 
+                        className="inline button button-glow button-rounded button-raised button-primary">
+                    首页
+                </button>
+                <fieldset id="fieldIndex"className="inline button-rounded button-glow">
+                    <input id='textSearch' type="text" defaultvalue="搜索" /> 
+                    <button id="buttonSearch" type="button"></button>
+                </fieldset>
+                <button id="buttonNewArticle" type="button" 
+                        className='inline button button-glow button-rounded button-raised button-primary'  >             
+                    新文章
+                </button>
+                <select id='indexSelect'className="inline button-glow button-rounded">
+                    <option valule="index"> 目录显示 </option>
+                    <option valule="abstract"> 摘要显示 </option>
+                </select>
+                <hr color="grey" border="none"/>
             </div>
         );
     }
